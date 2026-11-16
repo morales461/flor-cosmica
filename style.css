@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at bottom, #020111, #000);
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+canvas {
+  display: block;
+}
+
+/* TEXTO */
+#mensagem {
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  text-align: center;
+  font-size: clamp(22px, 5vw, 36px);
+  color: #ffd1dc;
+  text-shadow: 0 0 20px rgba(255,150,200,0.8);
+  pointer-events: none;
+}
+
+/* BOTÃO FLOR */
+#btnAbrir {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff5fa2, #ff8fc7);
+  color: white;
+  box-shadow: 0 0 25px rgba(255,95,162,0.8);
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  50% { transform: translateX(-50%) scale(1.08); }
+}
+
+/* BOTÃO MÚSICA */
+#btnMusica {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 26px;
+  background: radial-gradient(circle, #ff5fa2, #ff1e70);
+  color: white;
+  box-shadow: 0 0 25px rgba(255,80,140,0.9);
+  animation: heartPulse 1.5s infinite;
+}
+
+#btnMusica.tocando {
+  animation: girar 3s linear infinite;
+}
+
+@keyframes heartPulse {
+  50% { transform: scale(1.2); }
+}
+
+@keyframes girar {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
